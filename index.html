@@ -35,16 +35,23 @@
         </svg>
       </div>
       <p class="title_brief">SEND A COMPLIMENT</p>
-      <form action="post" class="form_section">
+
+      <form action="post" class="form_section" onsubmit="sendSMS(); reset(); return false;">
         <div class="form_wrapper">
           <div class="form_row">
             <label for="to">
               Recipient's Phone No.
-              <input type="tel" required name="to" placeholder="e.g 08160902233" />
+              <input
+                type="tel"
+                required
+                name="to"
+                placeholder="e.g 08160902233"
+                id="toPhoneNumber"
+              />
             </label>
             <label for="sender">
               Your Name
-              <input type="text" required name="sender" placeholder="e.g Gare" />
+              <input type="text" required name="sender" placeholder="e.g Gare" id="youName" />
             </label>
           </div>
           <div class="form_row">
@@ -56,6 +63,7 @@
                 type="text"
                 name="compliment"
                 placeholder="e.g Colin you're an amazing person, I love you."
+                id="theCompliment"
               />
             </label>
           </div>
@@ -63,5 +71,7 @@
         <input class="submit_btn" type="submit" name="send" value="Send compliment" />
       </form>
     </div>
+
+    <script src="./send_sms.js"></script>
   </body>
 </html>
